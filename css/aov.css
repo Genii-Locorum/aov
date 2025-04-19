@@ -17,6 +17,22 @@
   --secondary-icon-colour: red;
 }
 
+body.theme-dark .application, body.theme-dark.application {
+  --primary-font-colour: white;
+  --secondary-font-colour: rgba(187, 248, 251, 1);
+  --title-font-colour: rgb(116, 252, 252);
+  --primary-back-colour:rgb(127, 127, 127);
+  --secondary-back-colour: rgb(44, 44, 44);
+  --primary-font: "Roboto";
+  --background-colour: rgba(255, 255, 255, 0.05);
+  --primary-font-size: 14px;
+  --title-font-size: 18px;
+  --actor-rollable-colour:white;
+  --actor-rollable-shadow: rgb(0, 255, 255);
+  --primary-icon-colour: white;
+  --secondary-icon-colour: rgb(0, 255, 255);
+}
+
 .application.aov .window-content {
   flex: 1;
   display: flex;
