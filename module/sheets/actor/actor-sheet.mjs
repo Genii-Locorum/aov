@@ -24,6 +24,7 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
       viewDoc: this._viewDoc,
       toggleLock: this._toggleLock,
       createDoc: this._createDoc,
+      deleteDoc: this._deleteDoc,
     }
   }
 
@@ -98,9 +99,11 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
   }
 
   //Delete Embedded Document
-  static async _deleteDoc(event) {
-    const doc = this._getEmbeddedDocument(event.currentTarget);
-    await doc.delete();
+  static async _deleteDoc(event, target) {
+    if (event.detail === 2) {
+      const doc = this._getEmbeddedDocument(target);
+      await doc.delete();
+    }
   }
 
   //Get Embedded Document
@@ -163,7 +166,7 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
 
   }
 
-
+  
   //----------------
 
   //Implement Game Settings for Colours etc

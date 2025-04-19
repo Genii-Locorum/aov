@@ -130,7 +130,6 @@ export class AoVCharacterSheet extends AoVActorSheet {
     this.element.querySelectorAll('.actor-toggle').forEach(n => n.addEventListener("dblclick", this.#onActorToggle.bind(this)));
     this.element.querySelectorAll('.item-quantity').forEach(n => n.addEventListener("change", this.#editQty.bind(this)))
     this.element.querySelectorAll('.item-toggle').forEach(n => n.addEventListener("click", this.#onItemToggle.bind(this)))
-    this.element.querySelectorAll('.item-delete').forEach(n => n.addEventListener("dblclick", AoVActorSheet._deleteDoc.bind(this)))
   }
 
 
