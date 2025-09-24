@@ -1,5 +1,6 @@
 import { AOV } from "../setup/config.mjs";
 import { AOVActor } from "../actor/actor.mjs";
+import { AOVClickableEvents } from '../apps/aov-clickable-events.js'
 import { AOVItem } from "../item/item.mjs";
 import { CID } from '../cid/cid.mjs'
 import { handlebarsHelper } from '../setup/handlebar-helpers.mjs';
@@ -13,7 +14,15 @@ export default function Init() {
   game.aov = {
     AOVActor,
     AOVItem,
-    rollItemMacro
+    rollItemMacro,
+    ClickRegionLeftUuid: AOVClickableEvents.ClickRegionLeftUuid,
+    ClickRegionRightUuid: AOVClickableEvents.ClickRegionRightUuid,
+    hasPermissionDocument: AOVClickableEvents.hasPermissionDocument,
+    InSceneRelativeTeleport: AOVClickableEvents.InSceneRelativeTeleport,
+    MapPinToggle: AOVClickableEvents.MapPinToggle,
+    openDocument: AOVClickableEvents.openDocument,
+    toggleTileJournalPages: AOVClickableEvents.toggleTileJournalPages,
+    toScene: AOVClickableEvents.toScene
   }
   //Add Custom Configuration
   CONFIG.AOV = AOV;
@@ -53,6 +62,7 @@ export default function Init() {
   CONFIG.Item.dataModels.history = models.AOVHistoryModel
 
   CID.init()
+  AOVClickableEvents.initSelf()
   registerSheets()
 
   // Active Effects are never copied to the Actor,

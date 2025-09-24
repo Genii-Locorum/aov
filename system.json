@@ -120,6 +120,9 @@
         "weapon": {"htmlFields": ["description","gmNotes"]},
         "weaponcat": {},
         "wound": {}
+      },
+      "RegionBehavior": {
+        "aovClickableEvents": {}
       }
     },
 

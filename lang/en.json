@@ -639,6 +639,19 @@
       "title": "Edit Chaosium ID (CID)"
     },
 
+    "ClickableEvents": {
+      "LeftClick": {
+        "Title": "Left Click Script"
+      },
+      "MouseOver": {
+        "Title": "Permission to click",
+        "Hint": "Return boolean if should allow click and show mouse cursor"
+      },
+      "RightClick": {
+        "Title": "Right Click Script"
+      }
+    },
+
     "COResult": {
       "WP": {
         "44": "Attacker rolls normal damage. Defender’s parrying weapon takes 1 hit point of damage if rolled damage is greater than its current hit points. Any excess damage goes to the affected hit location.",
@@ -1052,6 +1065,9 @@
       "weapon": "Weapon",
       "weaponcat": "Weapon Category",
       "wound": "Wound"
+    },
+    "RegionBehavior": {
+      "aovClickableEvents": "Clickable Events"
     }
   }
 }

@@ -39,7 +39,10 @@ export class AOVSystemSocket {
         if (data.to === game.user.id) {
           AOVCharCreate.farm(data.value.actor);
         }
-        break;
+        break
+      case 'toggleMapNotes':
+        game.settings.set('core', NotesLayer.TOGGLE_SETTING, data.toggle === true)
+        break
     }
   }
 }
