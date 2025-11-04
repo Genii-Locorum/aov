@@ -4,6 +4,7 @@ export { default as AOVCharacterModel } from "../actor/data/actor-character-mode
 export { default as AOVNPCModel } from "../actor/data/actor-npc-model.mjs";
 export { default as AOVFarmModel} from "../actor/data/actor-farm-model.mjs";
 export { default as AOVShipModel} from "../actor/data/actor-ship-model.mjs";
+export { default as AOVPartyModel} from "../actor/data/actor-party-model.mjs";
 
 //Items
 export { default as AOVItemBaseModel } from "../item/data/base-item-model.mjs";

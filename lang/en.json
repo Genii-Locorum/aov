@@ -260,6 +260,7 @@
     "packed": "Packed",
     "parent": "Parent",
     "parryBonus": "Parry Bonus",
+    "partyMember": "Party Member",
     "passions": "Passions",
     "patrionicName": "Patrionic Name",
     "patrionicSuffix": "Patrionic Suffix",
@@ -1000,6 +1001,7 @@
       "temporary": "Temporary"
     },
     "ErrorMsg": {
+      "cantAddItems": "You can not add items to a {actorType}.",
       "cantDropItem": "You can not add a {itemType} item to a {actorType}.",
       "cantDropActor": "You can not add a {itemType} actor to a {actorType}.",
       "cantImproveSkill": "You can't improve this skill any further",
@@ -1273,6 +1275,7 @@
       "character": "Character",
       "farm": "Farm",
       "npc": "NPC",
+      "party": "Party",
       "ship": "Ship"
     },
     "Item": {

@@ -552,6 +552,7 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
     const aeCls = getDocumentClass('ActiveEffect');
     const effect = await aeCls.fromDropData(data);
     if (!this.actor.isOwner || !effect) return false;
+    if (this.actor.type === 'party') return false;
     return aeCls.create(effect, { parent: this.actor });
   }
 
@@ -564,8 +565,11 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
   //Handle dropping of an item reference or item data onto an Actor Sheet
   async _onDropItem(event, data) {
     if (!this.actor.isOwner) return false;
+    if (this.actor.type === 'party') {
+        ui.notifications.warn(game.i18n.format('AOV.ErrorMsg.cantAddItems', { actorType: game.i18n.localize('TYPES.Actor.'+ this.actor.type) }))
+      return false;
+    }
     const item = await Item.implementation.fromDropData(data);
-
     // Handle item sorting within the same Actor
     if (this.actor.uuid === item.parent?.uuid)
       return this._onSortItem(event, item);
@@ -576,6 +580,7 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
   //Handle dropping of a Folder on an Actor Sheet.
   async _onDropFolder(event, data) {
     if (!this.actor.isOwner) return [];
+    if (this.actor.type === 'party') return false;
     const folder = await Folder.implementation.fromDropData(data);
     if (folder.type !== 'Item') return [];
     const droppedItemData = await Promise.all(
@@ -630,6 +635,15 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
       }
       farms.push({uuid:newActor.uuid})
       await this.actor.update({'system.farms': farms})
+    } else if (this.actor.type === 'party' && (['character'].includes(newActor.type))) {
+      const members = this.actor.system.members ? foundry.utils.duplicate(this.actor.system.members) : []
+      //Check member is not in members list
+      if (members.find(el => el.uuid === newActor.uuid)) {
+        ui.notifications.warn(game.i18n.format('AOV.ErrorMsg.dupItem', { itemName: (newActor.name +"(" + newActor.uuid +")") }));
+        return
+      }
+      members.push({uuid:newActor.uuid})
+      await this.actor.update({'system.members': members})
     } else {
       ui.notifications.warn(game.i18n.format('AOV.ErrorMsg.cantDropActor', { itemType: game.i18n.localize('TYPES.Actor.'+ newActor.type), actorType: game.i18n.localize('TYPES.Actor.'+ this.actor.type) }))
       return

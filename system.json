@@ -126,7 +126,8 @@
         "character": {"htmlFields": ["description","gmNotes"]},
         "npc": {"htmlFields": ["description","gmNotes"]},
         "farm": {"htmlFields": ["description","gmNotes"]},
-        "ship": {"htmlFields": ["description","gmNotes"]}
+        "ship": {"htmlFields": ["description","gmNotes"]},
+        "party": {}
       },
       "Item": {
         "armour": {"htmlFields": ["description","gmNotes"]},

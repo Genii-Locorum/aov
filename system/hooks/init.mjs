@@ -36,6 +36,7 @@ export default function Init() {
   CONFIG.Actor.dataModels.npc = models.AOVNPCModel
   CONFIG.Actor.dataModels.farm = models.AOVFarmModel
   CONFIG.Actor.dataModels.ship = models.AOVShipModel
+  CONFIG.Actor.dataModels.party = models.AOVPartyModel
   CONFIG.Item.dataModels.devotion = models.AOVDevotionModel
   CONFIG.Item.dataModels.family = models.AOVFamilyModel
   CONFIG.Item.dataModels.gear = models.AOVGearModel
