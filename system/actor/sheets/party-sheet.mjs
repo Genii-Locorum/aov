@@ -8,8 +8,8 @@ export class AoVPartySheet extends AoVActorSheet {
   static DEFAULT_OPTIONS = {
     classes: ['party','themed', 'theme-light'],
     position: {
-      width: 1235,
-      height: 165,
+      width: 1200,
+      height: 157,
     },
   }
 
@@ -32,6 +32,9 @@ export class AoVPartySheet extends AoVActorSheet {
 
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
+    context.showHPVal = game.settings.get('aov','partyHPVal') || context.isGM
+    console.log(context.showHPVal)
+
     await this._prepareItems(context);
     return context
   }

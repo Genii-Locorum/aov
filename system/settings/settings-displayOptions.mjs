@@ -19,6 +19,16 @@ const SETTINGS = {
     requiresReload: true,
   },
 
+    partyHPVal: {
+    name: "AOV.Settings.partyHPVal",
+    hint: "AOV.Settings.partyHPValHint",
+    scope: "world",
+    config: false,
+    type: Boolean,
+    default: true,
+    requiresReload: true,
+  },
+
 }
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api

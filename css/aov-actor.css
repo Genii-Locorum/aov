@@ -603,6 +603,10 @@ nav.aov.characterSmall.tabs [data-tab]{
   background-image: none;
 }
 
+.aov.party.application .window-content {
+  padding: 5px;
+}
+
 .aov .party-list {
   list-style: none;
   display: block;
@@ -632,12 +636,33 @@ nav.aov.characterSmall.tabs [data-tab]{
 }
 
 .aov .party-member {
+  border: 1px solid cornsilk;
+  padding: 2px;
+  width: 283px
+}
+
+.aov .party-member-name {
+  display: grid;
+  grid-template-columns: 230px 40px;
+  column-gap: 5px;
+  color: cornsilk;
+  font-size: var(--aov-title-font-size);
+  font-weight: bold;
+}
+
+.aov .party-member-grid {
   display: grid;
   grid-template-columns: 80px 200px;
   column-gap: 5px;
   row-gap: 10px;
-  height: 90px;
-  border: 1px solid black;
+  height: 80px;
+}
+
+.aov .partybars-multi {
+  height: 80px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
 }
 
 .aov .partybar {
@@ -646,7 +671,7 @@ nav.aov.characterSmall.tabs [data-tab]{
   background-color: darkgrey;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .aov .partybar .hpbar{
@@ -661,9 +686,4 @@ nav.aov.characterSmall.tabs [data-tab]{
   white-space: nowrap;
 }
 
-.aov .party-name {
-  color: cornsilk;
-  font-size: var(--aov-title-font-size);
-  font-weight: bold;
-}
 

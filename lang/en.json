@@ -1152,6 +1152,8 @@
       "npcSettingsHint": "Change settings for NPCs",
       "omens": "Omens",
       "omensHint": "The omens for the current game year",
+      "partyHPVal": "Show HP/MP Values",
+      "partyHPValHint": "Players can see the values of HP/MP on the Party Sheet",
       "randomDice": "Random Dice",
       "randomDiceHint": "Allow random dice method",
       "showDiceRolls": "Show Dice Rolls",
