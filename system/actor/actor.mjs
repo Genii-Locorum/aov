@@ -212,6 +212,9 @@ export class AOVActor extends Actor {
 
     //Calculate ENC penalites
     await this._eNCPenalty (actorData)
+
+    //Check to see if Actor is in a visible party and if so re-render the party sheet
+    await this._updateParty(actorData)
   }
 
   //Prepare NPC specific data
@@ -247,8 +250,6 @@ export class AOVActor extends Actor {
 
     systemData.hp.value = systemData.hp.max - totalDmg
   }
-
-
 
   getRollData() {
     const data = super.getRollData();
@@ -370,6 +371,9 @@ _eNCPenalty (actorData) {
         case 'npc':
           data.img = 'systems/aov/art-assets/cultist.svg'
           break
+        case 'party':
+          data.img = 'systems/aov/art-assets/dark-squad.svg'
+          break
       }
     }
 
@@ -383,6 +387,16 @@ _eNCPenalty (actorData) {
           enabled: true
         }]
       }, data.prototypeToken || {})
+    } else if (data.type === 'party') {
+      data.prototypeToken = foundry.utils.mergeObject({
+        actorLink: true,
+        detectionModes: [{
+          enabled: false
+        }]
+      })
+      data.ownership = foundry.utils.mergeObject({
+        default: 2
+      })
     }
     let actor = await super.create(data, options)
 
@@ -713,5 +727,21 @@ _eNCPenalty (actorData) {
     await this.update(checkProp)
   }
 
+  //Rerender Party Sheet if actor is in it
+  async _updateParty(actorData) {
+    let parties = await game.actors.filter(actr=>actr.type==='party').filter(actr=>actr.sheet.rendered)
+    if (parties.length === 0) return
+    for (let party of parties) {
+      let update = false
+      for (let member of party.system.members) {
+        if (member.uuid === actorData.uuid) {
+          update = true
+        }
+        if (update) {
+          await party.render()
+        }
+      }
+    }
+  }
 
 }

@@ -21,6 +21,16 @@
   }
 }
 
+.aov.party.application {
+  background-image: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.aov .party{
+  overflow-y: auto;
+}
+
+
 .aov.npc {
   overflow: visible;
   .window-content {
@@ -588,3 +598,92 @@ nav.aov.characterSmall.tabs [data-tab]{
 .aov ol.history-list li:nth-child(even){
     background-color: #4507072b;
 }
+
+.aov .party {
+  background-image: none;
+}
+
+.aov.party.application .window-content {
+  padding: 5px;
+}
+
+.aov .party-list {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+  background-image: none;
+    width: inherit;
+}
+
+
+.aov .party-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  gap: .5rem;
+  overflow: visible;
+  margin: 0 auto;
+}
+
+.aov .party-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+  justify-content: center;
+}
+
+.aov .party-member {
+  border: 1px solid cornsilk;
+  padding: 2px;
+  width: 283px
+}
+
+.aov .party-member-name {
+  display: grid;
+  grid-template-columns: 230px 40px;
+  column-gap: 5px;
+  color: cornsilk;
+  font-size: var(--aov-title-font-size);
+  font-weight: bold;
+}
+
+.aov .party-member-grid {
+  display: grid;
+  grid-template-columns: 80px 200px;
+  column-gap: 5px;
+  row-gap: 10px;
+  height: 80px;
+}
+
+.aov .partybars-multi {
+  height: 80px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aov .partybar {
+  width: 190px;
+  height: 20px;
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.aov .partybar .hpbar{
+  background-color: var(--primary-back-colour);
+  height: 100%;
+  white-space: nowrap;
+}
+
+.aov .partybar .mpbar{
+  background-color: var(--secondary-back-colour);
+  height: 100%;
+  white-space: nowrap;
+}
+
+

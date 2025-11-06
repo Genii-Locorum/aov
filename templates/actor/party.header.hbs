@@ -1,0 +1,36 @@
+<header class='party'>
+  <div class="party-form">
+  <ol class='party-list'>
+    <div class="party-grid">
+      {{#each members as |member id|}}
+        <li class="party-member" data-item-id='{{member.uuid}}' data-drag='true' data-document-class='Actor'>
+          <div class='party-member-name'>
+            <div>{{member.name}}</div>
+            <div>
+              {{#if ../isGM}}
+                <a class='deleteMember centre' style="float: right;" title='{{localize "AOV.deleteDoc" type=(localize "AOV.partyMember")}}'>
+                  <i class='fas fa-trash'></i>
+                </a>
+              {{/if}}
+            </div>
+          </div>
+
+          <div class="party-member-grid">
+            <img class='viewFromUuid' title='{{localize "AOV.viewDoc" type=(localize "AOV.partyMember")}}' src='{{member.image}}' height='80' width='80'/>
+            <div class="partybars-multi">
+              <div class="partybar" >
+                <span class="hpbar" style="width:{{member.hpPerc}};" >&nbsp{{localize 'AOV.hpAbbr'}}{{#if ../showHPVal}}: {{hpLabel}}{{/if}}</span>
+              </div>
+
+              <div class="partybar">
+                <span class="mpbar" style="width:{{member.mpPerc}};" >&nbsp{{localize 'AOV.mpAbbr'}}{{#if ../showHPVal}}: {{mpLabel}}{{/if}}</span>
+              </div>
+            </div>
+          </div>
+
+        </li>
+      {{/each}}
+    </div>
+  </ol>
+  </div>
+</header>
