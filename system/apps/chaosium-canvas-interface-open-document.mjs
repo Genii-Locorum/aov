@@ -5,6 +5,7 @@ export default class ChaosiumCanvasInterfaceOpenDocument extends ChaosiumCanvasI
     return {
       ALWAYS: 'AOV.ChaosiumCanvasInterface.Permission.Always',
       DOCUMENT: 'AOV.ChaosiumCanvasInterface.Permission.Document',
+      SEE_TILE: 'AOV.ChaosiumCanvasInterface.Permission.SeeTile',
       GM: 'AOV.ChaosiumCanvasInterface.Permission.GM'
     }
   }
@@ -43,6 +44,11 @@ export default class ChaosiumCanvasInterfaceOpenDocument extends ChaosiumCanvasI
         initial: '',
         label: 'AOV.ChaosiumCanvasInterface.OpenDocument.Anchor.Title',
         hint: 'AOV.ChaosiumCanvasInterface.OpenDocument.Anchor.Hint'
+      }),
+      tileUuid: new fields.DocumentUUIDField({
+        label: 'AOV.ChaosiumCanvasInterface.OpenDocument.Tile.Title',
+        hint: 'AOV.ChaosiumCanvasInterface.OpenDocument.Tile.Hint',
+        type: 'Tile'
       })
     }
   }
@@ -58,8 +64,17 @@ export default class ChaosiumCanvasInterfaceOpenDocument extends ChaosiumCanvasI
           return true
         }
         if (this.documentUuid) {
-          return (await fromUuid(this.documentUuid)).testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) ?? false
+          return (await fromUuid(this.documentUuid)).testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED) ?? false
         }
+        break
+      case 'SEE_TILE':
+        if (game.user.isGM) {
+          return true
+        }
+        if (this.tileUuid && this.documentUuid) {
+          return !(await fromUuid(this.tileUuid)).hidden && ((await fromUuid(this.documentUuid)).testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED) ?? false)
+        }
+        break
     }
     return false
   }
@@ -72,7 +87,7 @@ export default class ChaosiumCanvasInterfaceOpenDocument extends ChaosiumCanvasI
           doc = page
         }
       }
-    if (doc?.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)) {
+    if (doc?.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED)) {
       if (doc instanceof JournalEntryPage) {
         doc.parent.sheet.render(true, { pageId: doc.id, anchor: this.anchor })
       } else {
