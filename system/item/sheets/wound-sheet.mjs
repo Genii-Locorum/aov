@@ -1,5 +1,6 @@
 import { AoVItemSheet } from "./base-item-sheet.mjs"
 import { AOVSelectLists } from "../../apps/select-lists.mjs"
+import { AOVActiveEffectSheet } from "../../sheets/aov-active-effect-sheet.mjs"
 
 export class AoVWoundSheet extends AoVItemSheet {
   constructor(options = {}) {
@@ -32,7 +33,10 @@ export class AoVWoundSheet extends AoVItemSheet {
       }
       context.hitLocs = await AOVSelectLists.getHitLocOptions(actor)
     }
-
+    context.effects = AOVActiveEffectSheet.getItemEffectsFromSheet(this.document)
+    const changesActiveEffects = AOVActiveEffectSheet.getEffectChangesFromSheet(this.document)
+    context.effectKeys = changesActiveEffects.effectKeys
+    context.effectChanges = changesActiveEffects.effectChanges
     return context
   }
 

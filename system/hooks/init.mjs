@@ -20,6 +20,11 @@ export default function Init() {
   }
   //Add Custom Configuration
   CONFIG.AOV = AOV;
+    CONFIG.Combat.initiative = {
+    formula: '@abilities.dex.total + (@abilities.int.total/100)',
+    decimals: 2,
+  };
+
 
   //Register Settings and Handlebar Helpers
   registerSettings();

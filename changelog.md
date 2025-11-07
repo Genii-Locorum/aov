@@ -1,3 +1,11 @@
+## 13.19
+- Add Can See Tile permission to CCI: Open Document (James B)
+- Reduce minimum allowed Document permission to limited in CCI: Open Document (JamesB)
+- Added a new "Party" actor - you can add party members to this and then show the sheet on the canvas.
+- New Display Options Game Setting determines in players can see HP/MP Values (rather than just a bar).  GM can see them
+- Combat Initiative set to be DEX + (INT/100) so combat can be tracked
+- Can now edit Active Effects for Custom Keys on embedded item sheets
+
 ## 13.18
 - Additional CCI option, Ambient Light toggle added
 - All CCI show/hide options have become show/hide/toggle

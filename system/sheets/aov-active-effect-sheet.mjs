@@ -2,7 +2,8 @@ import { AOVActiveEffect } from "../apps/active-effects.mjs"
 
 export class AOVActiveEffectSheet {
   static getItemEffectsFromSheet(document) {
-    if (document.hasOwner) {
+    //Changed from hasOwner to isOwned in V13
+    if (document.isOwned) {
       return document.parent.effects.reduce((c, i) => {
         if (i.origin === document.uuid) {
           c.push({

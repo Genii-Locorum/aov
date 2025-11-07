@@ -88,9 +88,7 @@ export class AOVActorItemDrop {
 
       //Check for duplicate skills, but not specialised skills that have a specialisation name added
       if (['skill'].includes(nItm.type)) {
-        console.log(nItm.system.specSkill, nItm.system.specialisation)
         if (!nItm.system.specSkill || (nItm.system.specSkill && (nItm.system.specialisation != "" && nItm.system.specialisation != game.i18n.localize('AOV.specify')))) {
-          console.log(nItm.cidFlag)
           let currentList = await actor.items.filter(i => i.flags.aov?.cidFlag?.id === nItmCidFlag)
           if (currentList.length > 0) {
             ui.notifications.warn(game.i18n.format('AOV.ErrorMsg.dupItem', { itemName: (nItm.name + "(" + nItmCidFlag + ")") }));

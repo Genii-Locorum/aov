@@ -4,12 +4,12 @@ import { AOVUtilities } from "../../apps/utilities.mjs"
 export class AoVSpeciesSheet extends AoVItemSheet {
   constructor(options = {}) {
     super(options)
-    this.#dragDrop = this.#createDragDropHandlers()    
+    this.#dragDrop = this.#createDragDropHandlers()
   }
 
   static DEFAULT_OPTIONS = {
     classes: ['species'],
-    dragDrop: [{ dragSelector: '[data-drag]', dropSelector: '.droppable' }],    
+    dragDrop: [{ dragSelector: '[data-drag]', dropSelector: '.droppable' }],
     position: {
       height: 600
     },
@@ -159,7 +159,7 @@ export class AoVSpeciesSheet extends AoVItemSheet {
         continue
       }
       collection.push({ uuid: item.uuid, cid: item.flags.aov.cidFlag.id, rank: item.system.lowRoll })
-      
+
     }
     await this.item.update({ [`system.${collectionName}`]: collection })
     return

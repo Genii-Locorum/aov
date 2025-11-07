@@ -33,8 +33,6 @@ export class AoVPartySheet extends AoVActorSheet {
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
     context.showHPVal = game.settings.get('aov','partyHPVal') || context.isGM
-    console.log(context.showHPVal)
-
     await this._prepareItems(context);
     return context
   }
