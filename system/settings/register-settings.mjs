@@ -88,4 +88,12 @@ export async function registerSettings() {
     type: String,
     default: ""
   })
+
+  game.settings.register('aov', 'showLogo', {
+    name: 'Show AoV Logo',
+    scope: 'world',
+    config: false,
+    type: Boolean,
+    default: true
+  })
 }

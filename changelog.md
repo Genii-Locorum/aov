@@ -2,8 +2,10 @@
 - Add Can See Tile permission to CCI: Open Document (James B)
 - Reduce minimum allowed Document permission to limited in CCI: Open Document (JamesB)
 - Added a new "Party" actor - you can add party members to this and then show the sheet on the canvas.
-- New Display Options Game Setting determines in players can see HP/MP Values (rather than just a bar).  GM can see them
+- New Display Option Game Setting determines in players can see HP/MP Values (rather than just a bar).  GM can always see values
 - Combat Initiative set to be DEX + (INT/100) so combat can be tracked
+- Combat has two phases, (Statement of) Intent and Action.  You can adjust initiative in the Intent phase (e.g. Draw Sword, Move)
+- New Display Option Game Settings so you can use Actor rather than Token Images for Combatants in the tracker
 - Can now edit Active Effects for Custom Keys on embedded item sheets
 
 ## 13.18

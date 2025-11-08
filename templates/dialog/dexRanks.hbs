@@ -1,0 +1,23 @@
+<section id="dex-ranks-adj">
+
+  <div class = "diff-label bold">{{ cardLabel }}:</div>
+  <br>
+
+  <div>{{localize 'AOV.Combat.select'}}</div>
+  <input type="radio" id="drawWpn" name="action" value="draw" checked>
+  <label for="drawWpn">{{localize 'AOV.Combat.drawWpn'}}</label><br>
+  <input type="radio" id="sheathWpn" name="action" value="sheath">
+  <label for="sheathWpn">{{localize 'AOV.Combat.sheathWpn'}}</label><br>
+  <input type="radio" id="surprised" name="action" value="surprised">
+  <label for="surprised">{{localize 'AOV.Combat.surprised'}}</label><br>
+  <input type="radio" id="fullmove" name="action" value="move">
+  <label for="move">{{localize 'AOV.Combat.fullMove'}}</label><br>
+
+    <div class="flexrow">
+      <label title = "{{ localize 'AOV.Combat.otherHint' }}" >{{localize "AOV.Combat.amount"}}</label>
+        <input data-handle-change class="centre" type="number" value="{{other}}" name="adjOther">
+    </div>
+    <br>
+    <div>{{localize 'AOV.Combat.otherAdj'}}</div>
+    <br>
+  </section>

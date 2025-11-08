@@ -8,6 +8,9 @@ import { registerSettings } from '../settings/register-settings.mjs'
 import { registerSheets } from '../setup/register-sheets.mjs'
 import * as models from '../data/_module.mjs';
 import { AOVActiveEffect } from "../apps/active-effects.mjs";
+import { AoVCombatTracker } from "../combat/combat-tracker.mjs";
+import { AoVCombat } from "../combat/combat.mjs";
+import { AoVCombatant } from "../combat/combatant.mjs";
 
 export default function Init() {
   //Add classes to global game object
@@ -34,6 +37,9 @@ export default function Init() {
   CONFIG.Item.documentClass = AOVItem;
   CONFIG.Actor.documentClass = AOVActor;
   CONFIG.ActiveEffect.documentClass = AOVActiveEffect;
+  CONFIG.Combat.documentClass = AoVCombat;
+  CONFIG.Combatant.documentClass = AoVCombatant;
+  CONFIG.ui.combat = AoVCombatTracker;
 
 
   //Declare Data Models

@@ -3,6 +3,8 @@ import { RECard } from "../chat/resistance-chat.mjs";
 import { AOVCheck } from "./checks.mjs";
 import { COCard } from "../chat/combat-chat.mjs";
 import { AOVCharCreate } from "../actor/charCreate.mjs";
+import { AoVCombatant } from "../combat/combatant.mjs";
+import { AoVCombatTracker } from "../combat/combat-tracker.mjs";
 
 export class AOVSystemSocket {
 
@@ -45,7 +47,13 @@ export class AOVSystemSocket {
         break;
       case 'toggleMapNotes':
         game.settings.set('core', NotesLayer.TOGGLE_SETTING, data.toggle === true)
-        break
+        break;
+      case 'combatantImage':
+        AoVCombatant.updateImage(data.value.combatantUuid, data.value.img);
+        break;
+      case 'combatantInit':
+        AoVCombatTracker.updateInit(data.value.combatantUuid, data.value.initiative);
+        break;
     }
   }
 }

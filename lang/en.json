@@ -1,10 +1,12 @@
 {
   "AOV": {
     "absorbs": "Absorbs",
+    "action": "Action",
     "active": "Active",
     "activeAbbr": "Ac",
     "add": "Add",
     "addWound": "Click location to add a wound",
+    "adjustInit": "Adjust Initiative",
     "age": "Age",
     "ageAbbr": "Age",
     "aging": "Aging",
@@ -195,6 +197,7 @@
     "improvStat": "Select Characteristic",
     "inactive": "Inactive",
     "increaseYear": "Increase Year by 1",
+    "intent": "Intent",
     "invalid": "Invalid",
     "lawspeaker": "Lawspeaker",
     "length": "Length",
@@ -885,6 +888,20 @@
       "title": "Edit Chaosium ID (CID)"
     },
 
+    "Combat": {
+      "adjInit": "Adjust Initiative",
+      "amount": "Other Amount",
+      "combatant": "Combatant",
+      "drawWpn": "Draw Weapon (5 DEX)",
+      "fullMove": "Full Move (All DEX)",
+      "other": "Other",
+      "otherAdj": "1 DEX per 3m Moved, 1 DEX per Rune Carved",
+      "otherHint": "Enter the amount to reduce initiative by",
+      "select": "Please select your action, or enter Other value:",
+      "sheathWpn": "Sheath Weapon (5 DEX)",
+      "surprised": "Surprised (5DEX)"
+    },
+
     "COResult": {
       "WP": {
         "44": "Attacker rolls normal damage. Defender’s parrying weapon takes 1 hit point of damage if rolled damage is greater than its current hit points. Any excess damage goes to the affected hit location.",
@@ -1144,6 +1161,8 @@
       "childDeathHint": "Make Child Survival Rolls and allow stillbirths",
       "cidOptions": "Chaosium ID Settings",
       "cidOptionsHint": "Set default Chaosium ID options",
+      "combatToken": "Combatant Images",
+      "combatTokenHint": "Use Actor rather than Token Images for Combatants",
       "createSettings": "Character Creation Settings",
       "createSettingsHint": "Change settings for Character Creation",
       "displayOptions": "Display Options",

@@ -29,6 +29,16 @@ const SETTINGS = {
     requiresReload: true,
   },
 
+    combatToken: {
+    name: "AOV.Settings.combatToken",
+    hint: "AOV.Settings.combatTokenHint",
+    scope: "world",
+    config: false,
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+  },
+
 }
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api

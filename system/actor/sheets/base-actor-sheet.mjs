@@ -108,6 +108,7 @@ export class AoVActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSh
       isCreate: game.settings.get('aov','createEnabled'),
       isVictory: game.settings.get('aov','victoryEnabled'),
       isSelectGender: game.settings.get('aov','binaryGender'),
+      showLogo: game.settings.get('aov','showLogo'),
     };
   }
 

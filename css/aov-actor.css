@@ -638,7 +638,8 @@ nav.aov.characterSmall.tabs [data-tab]{
 .aov .party-member {
   border: 1px solid cornsilk;
   padding: 2px;
-  width: 283px
+  width: 283px;
+  height: 106px;
 }
 
 .aov .party-member-name {

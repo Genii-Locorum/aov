@@ -38,10 +38,13 @@ src: url('../art-assets/FarnhamText-Regular.otf') format('woff2');
   --aov-title-font-colour: rgb(68, 111, 94);
   --aov-table-row-colour-even: rgba(0,0,0,0.1);
   --aov-table-row-colour-odd: transparent;
+  --aov-background: url('../art-assets/lightstone.jpg');
 }
 
 body.theme-light .application.aov,
-body.theme-light.application .aov{
+body.theme-light.application .aov,
+.theme-light.combat-sidebar,
+.theme-light .combat-sidebar{
   --aov-primary-font-colour: black;
   --aov-secondary-font-colour: rgb(163, 16, 8);
   --aov-title-font-colour: rgb(68, 111, 94);
@@ -64,12 +67,15 @@ body.theme-light.application .aov{
   --character-sheet-tab-yellow: url('../art-assets/ribbon-yellow.svg');
   --aov-table-row-colour-even: rgba(0,0,0,0.1);
   --aov-table-row-colour-odd: transparent;
+  --aov-background: url('../art-assets/lightstone.jpg');
 }
 
 
 body.theme-dark .application.aov,
-body.theme-dark.application .aov {
-  --aov-primary-font-colour: black;
+body.theme-dark.application .aov,
+.theme-dark.combat-sidebar,
+.theme-dark .combat-sidebar {
+  --aov-primary-font-colour: cornsilk;
   --aov-secondary-font-colour: rgb(163, 16, 8);
   --aov-title-font-colour: rgb(68, 111, 94);
   --primary-back-colour: rgba(68, 111, 94, 0.5);
@@ -91,6 +97,7 @@ body.theme-dark.application .aov {
   --character-sheet-tab-yellow: url('../art-assets/ribbon-yellow.svg');
   --aov-table-row-colour-even: rgba(0,0,0,0.1);
   --aov-table-row-colour-odd: transparent;
+  --aov-background: url('../art-assets/darkstone.jpg');
 }
 
 
